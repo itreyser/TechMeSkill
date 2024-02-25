@@ -11,23 +11,24 @@ public class Main {
         thirdExercise();
     }
 
-    public static void firstExercise(int a, int b){
+    public static void firstExercise(int a, int b) {
 
-        System.out.println("Результат деления двух чисел: " + a/b);
-        System.out.println("Результат остатка от деления двух чисел: " + a%b);
+        System.out.println("Результат деления двух чисел: " + a / b);
+        System.out.println("Результат остатка от деления двух чисел: " + a % b);
     }
 
 
-    public static void secondExercise(){
+    public static void secondExercise() {
         System.out.println("Пожалуйста, введите 3 числа: ");
         Scanner num = new Scanner(System.in);
-        int counter =1;
-        for(int i =0; i < 3; i++){
+        int counter = 1;
+        for (int i = 0; i < 3; i++) {
             counter *= num.nextInt();
         }
         System.out.println("Результат умножения: " + counter);
     }
-    public static void thirdExercise(){
+
+    public static void thirdExercise() {
         Scanner num = new Scanner(System.in);
         System.out.println("Введите два числа: ");
         System.out.println(num.nextInt() == num.nextInt());
