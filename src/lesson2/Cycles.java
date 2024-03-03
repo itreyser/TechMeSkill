@@ -30,16 +30,16 @@ public class Cycles {
         System.out.printf(text + counter);
     }
 
-    public static void subsequence(){
+    public static void subsequence() {
         System.out.println("Последовательность цифр от 7 до 98:");
         int i = 7;
-        while (i <= 98){
+        while (i <= 98) {
             System.out.print(i + " ");
             i += 7;
         }
     }
 
-    public static void squareNumber(){
+    public static void squareNumber() {
         for (int i = 10; i <= 20; i++) {
             int square = i * i;
             System.out.println("Квадрат числа " + i + ": " + square);
