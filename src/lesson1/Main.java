@@ -1,7 +1,9 @@
 package lesson1;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
+import lesson2.Addition;
+import lesson2.Conditionals;
+import lesson2.Cycles;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +11,9 @@ public class Main {
         firstExercise(12, 4);
         secondExercise();
         thirdExercise();
+        Conditionals.runningMethods();
+        Cycles.runningMethods();
+        Addition.runningMethods();
     }
 
     public static void firstExercise(int a, int b) {
