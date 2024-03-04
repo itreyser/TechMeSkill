@@ -6,15 +6,6 @@ import java.util.Scanner;
 public class Conditionals {
 
 
-    public static void runningMethods() {
-        seasons();
-        findSeasons();
-        numberCheck();
-        temperature();
-        rainbow();
-    }
-
-
     public static void seasons() {
         System.out.println("Введите номер месяца: ");
         Scanner scan = new Scanner(System.in);

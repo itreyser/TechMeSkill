@@ -4,12 +4,6 @@ import java.util.Scanner;
 
 public class Addition {
 
-    public static void runningMethods() {
-
-        fibonacci();
-        depositAmount();
-        multiplicationTable();
-    }
 
     public static void fibonacci() {
         Scanner scan = new Scanner(System.in);
@@ -17,10 +11,11 @@ public class Addition {
         int num = scan.nextInt();
         int firstNum = 0;
         int secondNum = 1;
+        int nextNum;
         System.out.printf("Первые %d чисел/ла Фиббоначи: ", num);
         for (int i = 0; i < num; i++) {
             System.out.print(firstNum + " ");
-            int nextNum = firstNum + secondNum;
+            nextNum = firstNum + secondNum;
             firstNum = secondNum;
             secondNum = nextNum;
         }

@@ -4,12 +4,6 @@ import java.util.Scanner;
 
 public class Cycles {
 
-    public static void runningMethods() {
-        unnumberedNumbers();
-        sumOfNumbers();
-        subsequence();
-        squareNumber();
-    }
 
     public static void unnumberedNumbers() {
         System.out.println("Нечетные числа: ");
