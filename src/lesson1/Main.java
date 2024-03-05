@@ -1,7 +1,6 @@
 package lesson1;
 
-import java.sql.SQLOutput;
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +8,7 @@ public class Main {
         firstExercise(12, 4);
         secondExercise();
         thirdExercise();
+
     }
 
     public static void firstExercise(int a, int b) {
