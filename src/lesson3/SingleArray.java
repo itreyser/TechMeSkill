@@ -119,8 +119,8 @@ public class SingleArray {
         }
         System.out.println(Arrays.toString(array));
         ArrayList<Integer> list = new ArrayList<>();
-        for (int j : array) { // в созданный список засовываем положительные значения
-            if (j > 0) {
+        for (int j : array) { // в созданный список засовываем ЧЕТНЫЕ значения
+            if (j % 2 == 0) {
                 list.add(j);
             }
         }

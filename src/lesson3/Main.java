@@ -8,15 +8,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        searchInArray();
-        removeInArray();
-        createArrayAndFind();
-        createTwoArrays();
+//        searchInArray();
+//        removeInArray();
+//        createArrayAndFind();
+//        createTwoArrays();
         singleArray();
-        createAndReplaceInArray();
-        chessBoards();
-        sumArrays();
-        diagonalArray();
-        sortingArray();
+//        createAndReplaceInArray();
+//        chessBoards();
+//        sumArrays();
+//        diagonalArray();
+//        sortingArray();
     }
 }
