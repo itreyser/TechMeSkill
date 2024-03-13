@@ -1,6 +1,6 @@
 package lesson3;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -18,13 +18,17 @@ public class SingleArray {
         System.out.println(Arrays.toString(array));
         System.out.println("Введите число, которое хотите найти в массиве: ");
         int input = scan.nextInt();
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == input) {
-                System.out.println("Ваше число найдено в массиве!");
+        boolean flag = false;
+        for (int j : array) {
+            if (j == input) {
+                flag = true;
                 break;
-            } else if (i == array.length - 1) {
-                System.out.println("Ваше число не найдено в массиве!");
             }
+        }
+        if (flag) {
+            System.out.println("Ваше число найдено в массиве!");
+        } else {
+            System.out.println("Ваше число не найдено в массиве!");
         }
     }
 
@@ -38,22 +42,28 @@ public class SingleArray {
         System.out.println(Arrays.toString(array));
         System.out.println("Введите число, которое хотите удалить в массиве: ");
         int input = scan.nextInt();
-        ArrayList<Integer> list = new ArrayList<>();
-        if ((Arrays.binarySearch(array, input)) >= 0) {
-            System.out.println("Такого значения нету в массиве!");
+        boolean found = false;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == input) {
+                found = true;
+                array[i] = 0; // помечаем элемент на удаление
+            }
+        }
+        if (!found) {
+            System.out.println("Такое число не найдено в массиве.");
         } else {
-            for (int j : array) {
-                if (j != input) {
-                    list.add(j);
+            int count = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] != 0) {
+                    array[count] = array[i];
+                    count++;
                 }
             }
-            int[] newArray = new int[list.size()];
-            for (int i = 0; i < list.size(); i++) {
-                newArray[i] = list.get(i);
-            }
-            System.out.println(Arrays.toString(newArray));
+            int[] newArray = Arrays.copyOf(array, count); // создаем новый массив без удаленных элементов
+            System.out.println("Новый массив без числа " + input + ": " + Arrays.toString(newArray));
         }
     }
+
 
     public static void createArrayAndFind() {
         Scanner scan = new Scanner(System.in);
@@ -67,10 +77,10 @@ public class SingleArray {
         double counter = 0;
         for (int i = 0; i < array.length; i++) {
             counter += array[i];
-            if (min < array[i]) {
+            if (min > array[i]) {
                 min = array[i];
             }
-            if (max > array[i]) {
+            if (max < array[i]) {
                 max = array[i];
             }
         }
@@ -88,8 +98,8 @@ public class SingleArray {
         double counter1 = 0;
         double counter2 = 0;
         for (int i = 0; i < 5; i++) {
-            counter1 = array1[i];
-            counter2 = array2[i];
+            counter1 += array1[i];
+            counter2 += array2[i];
         }
         double res1 = counter1 / 5;
         double res2 = counter2 / 5;
@@ -112,23 +122,21 @@ public class SingleArray {
             System.out.println("Размер массива должен быть от 6 и до 10 включительно");
             size = scan.nextInt();
         }
-        int[] array = new int[size]; // создание массива
+        int[] array = new int[size];
         Random r = new Random();
-        for (int i = 0; i < array.length; i++) { // заполнение массива рандомом
+        for (int i = 0; i < array.length; i++) {
             array[i] = r.nextInt();
         }
-        System.out.println(Arrays.toString(array));
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int j : array) { // в созданный список засовываем ЧЕТНЫЕ значения
-            if (j % 2 == 0) {
-                list.add(j);
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                array[count] = array[i];
+                count++;
             }
         }
-        int[] newArray = new int[list.size()]; // новый массив с размерностью списка
-        for (int i = 0; i < list.size(); i++) { // засовываем в массив значния из списка
-            newArray[i] = list.get(i);
-        }
+        int[] newArray = Arrays.copyOf(array, count);
         System.out.println(Arrays.toString(newArray));
+
     }
 
     public static void createAndReplaceInArray() {
