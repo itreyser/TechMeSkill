@@ -43,10 +43,10 @@ public class SingleArray {
         System.out.println("Введите число, которое хотите удалить в массиве: ");
         int input = scan.nextInt();
         boolean found = false;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == input) {
+        for (int j : array) {
+            if (j == input) {
                 found = true;
-                array[i] = 0; // помечаем элемент на удаление
+                break;
             }
         }
         if (!found) {
@@ -54,7 +54,7 @@ public class SingleArray {
         } else {
             int count = 0;
             for (int i = 0; i < array.length; i++) {
-                if (array[i] != 0) {
+                if (array[i] != input) {
                     array[count] = array[i];
                     count++;
                 }
