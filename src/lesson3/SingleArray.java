@@ -43,23 +43,24 @@ public class SingleArray {
         System.out.println("Введите число, которое хотите удалить в массиве: ");
         int input = scan.nextInt();
         boolean found = false;
+        int countInput = 0;
         for (int j : array) {
             if (j == input) {
                 found = true;
-                break;
+                countInput += 1;
             }
         }
         if (!found) {
             System.out.println("Такое число не найдено в массиве.");
         } else {
+            int[] newArray = new int[array.length - countInput];
             int count = 0;
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] != input) {
-                    array[count] = array[i];
+            for (int j : array) {
+                if (j != input) {
+                    newArray[count] = j;
                     count++;
                 }
             }
-            int[] newArray = Arrays.copyOf(array, count); // создаем новый массив без удаленных элементов
             System.out.println("Новый массив без числа " + input + ": " + Arrays.toString(newArray));
         }
     }
