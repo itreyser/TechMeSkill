@@ -42,15 +42,13 @@ public class SingleArray {
         System.out.println(Arrays.toString(array));
         System.out.println("Введите число, которое хотите удалить в массиве: ");
         int input = scan.nextInt();
-        boolean found = false;
         int countInput = 0;
         for (int j : array) {
             if (j == input) {
-                found = true;
                 countInput += 1;
             }
         }
-        if (!found) {
+        if (countInput == 0) {
             System.out.println("Такое число не найдено в массиве.");
         } else {
             int[] newArray = new int[array.length - countInput];
