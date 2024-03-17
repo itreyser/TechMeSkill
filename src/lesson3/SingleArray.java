@@ -45,7 +45,7 @@ public class SingleArray {
         int countInput = 0;
         for (int j : array) {
             if (j == input) {
-                countInput += 1;
+                countInput ++;
             }
         }
         if (countInput == 0) {
