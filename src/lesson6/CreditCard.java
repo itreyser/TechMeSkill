@@ -17,6 +17,7 @@ public class CreditCard {
     public void withdrawCard(int sum) {
         if (this.balance >= sum) {
             this.balance -= sum;
+            System.out.println("Оставшийся баланс: " + this.balance);
         } else {
             System.out.printf("На счету %d недостаточно средств", this.accountNumber);
             System.out.println();
