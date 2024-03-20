@@ -2,9 +2,9 @@ package lesson6.additionalTask;
 
 public class Computer {
     private int price;
-    private final String model;
-    private final RAM ram;
-    private final HDD hdd;
+    private  String model;
+    private  RAM ram;
+    private  HDD hdd;
 
 
     public Computer(int price, String model) {
