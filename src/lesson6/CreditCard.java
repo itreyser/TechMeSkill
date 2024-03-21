@@ -17,11 +17,12 @@ public class CreditCard {
     public int withdrawCard(int sum) {
         if (this.balance >= sum) {
             this.balance -= sum;
+            return balance;
         } else {
-            System.out.printf("На счету %d недостаточно средств", this.accountNumber);
+            System.out.printf("На счету %d недостаточно средств", accountNumber);
             System.out.println();
+            return -1;
         }
-        return balance;
     }
 
     public void cardInfo() {
