@@ -1,10 +1,22 @@
 package lesson8.additionalTask;
 
 public class Patient {
-    Doctor doctor;
-    NumberOfTreat planOfTreat;
+    private Doctor doctor;
+    private TreatmentPlan treatmentPlan;
 
-    public Patient(NumberOfTreat planOfTreat) {
-        this.planOfTreat = planOfTreat;
+    public Patient(TreatmentPlan treatmentPlan) {
+        this.treatmentPlan = treatmentPlan;
+    }
+
+    public TreatmentPlan treatmentPlan() {
+        return treatmentPlan;
+    }
+
+    public void setTreatmentPlan(TreatmentPlan treatmentPlan) {
+        this.treatmentPlan = treatmentPlan;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 }
