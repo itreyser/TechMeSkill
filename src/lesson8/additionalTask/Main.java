@@ -3,7 +3,7 @@ package lesson8.additionalTask;
 public class Main {
 
     public static void main(String[] args) {
-        Patient patient1 = new Patient(new TreatmentPlan(2));
+        Patient patient1 = new Patient();
         TreatmentPlan plan = new TreatmentPlan(2);
         patient1.setTreatmentPlan(plan);
         assignTreatment(patient1);
@@ -14,32 +14,18 @@ public class Main {
 
     public static void assignTreatment(Patient patient) {
         if (patient.treatmentPlan().getNumberOfPlan() == 1) {
-            Doctor surgeon = new Doctor() {
-                @Override
-                public void treat() {
-                    System.out.println("Вас лечит хирург и план лечения 1");
-                }
-            };
-            patient.setDoctor(surgeon);
-            surgeon.treat();
+            Doctor doctor = new Surgeon();
+            patient.setDoctor(doctor);
+            doctor.treat();
+
         } else if (patient.treatmentPlan().getNumberOfPlan() == 2) {
-            Doctor dentist = new Doctor() {
-                @Override
-                public void treat() {
-                    System.out.println("Вас лечит дантист и план лечения 2");
-                }
-            };
-            patient.setDoctor(dentist);
-            dentist.treat();
+            Doctor doctor = new Dentist();
+            patient.setDoctor(doctor);
+            doctor.treat();
         } else {
-            Doctor therapist = new Doctor() {
-                @Override
-                public void treat() {
-                    System.out.println("Вас лечит терапевт и план лечения общий");
-                }
-            };
-            patient.setDoctor(therapist);
-            therapist.treat();
+            Doctor doctor = new Therapist();
+            patient.setDoctor(doctor);
+            doctor.treat();
         }
     }
 }

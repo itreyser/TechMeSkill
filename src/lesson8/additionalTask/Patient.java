@@ -4,6 +4,9 @@ public class Patient {
     private Doctor doctor;
     private TreatmentPlan treatmentPlan;
 
+    public Patient() {
+    }
+
     public Patient(TreatmentPlan treatmentPlan) {
         this.treatmentPlan = treatmentPlan;
     }
