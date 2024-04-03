@@ -2,13 +2,15 @@ package lesson9;
 
 import java.util.Scanner;
 
+import static lesson9.SecondTask.searchWord;
+
 public class Main {
 
 
     public static void main(String[] args) {
         maxAndMinWord();
-        searchWord();
         palindrome();
+        searchWord();
         duplicationLetters();
     }
 
@@ -21,48 +23,18 @@ public class Main {
         String maxWord = array[0];
 
         for (String i : array) {
-            if (i.length() > maxWord.length()) {
+            if (i.length() >= maxWord.length()) {
                 maxWord = i;
             }
-            if (i.length() < minWord.length()) {
+            if (i.length() <= minWord.length()) {
                 minWord = i;
             }
         }
-        String lastMinWord = line.substring(line.lastIndexOf(minWord), line.lastIndexOf(minWord) + minWord.length());
-        String lastMaxWord = line.substring(line.lastIndexOf(maxWord), line.lastIndexOf(maxWord) + maxWord.length());
 
-        System.out.println("Самое короткое слово: " + lastMinWord);
-        System.out.println("Самое длинное слово: " + lastMaxWord);
+        System.out.println("Самое короткое слово: " + minWord);
+        System.out.println("Самое длинное слово: " + maxWord);
     }
 
-    public static void searchWord() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Введите строку: ");
-        String line = scan.nextLine();
-        String[] array = line.split(" ");
-        String resalt = array[0];
-        int countResalt = 0;
-        for (String i : array) {
-            char[] arrayChar = i.toCharArray();
-            int count = 0;
-            for (char j : arrayChar) {
-                int countChar = 0;
-                for (char k : arrayChar) {
-                    if (j == k) {
-                        countChar++;
-                    }
-                }
-                if (count < countChar) {
-                    count = countChar;
-                }
-            }
-            if (countResalt < count) {
-                countResalt = count;
-                resalt = i;
-            }
-        }
-        System.out.println(resalt);
-    }
 
     public static void palindrome() {
         Scanner scan = new Scanner(System.in);
