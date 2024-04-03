@@ -40,13 +40,7 @@ public class Main {
         }
         List<Integer> listDel = new ArrayList<>();
         for (Integer i : list) {
-            int counter = 0;
-            for (Integer j : list) {
-                if (Objects.equals(i, j)) {
-                    counter++;
-                }
-            }
-            if (counter > 1) {
+            if (countOccurrences(i, list)) {
                 if (!listDel.contains(i))
                     listDel.add(i);
 
@@ -54,5 +48,15 @@ public class Main {
         }
         list.removeAll(listDel);
         System.out.println(list);
+    }
+
+    public static boolean countOccurrences(Integer number, List<Integer> list){
+        int counter = 0;
+        for (Integer i : list) {
+            if (Objects.equals(i, number)) {
+                counter++;
+            }
+        }
+        return counter > 1;
     }
 }

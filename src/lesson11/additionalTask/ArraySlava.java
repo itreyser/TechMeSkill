@@ -1,7 +1,6 @@
 package lesson11.additionalTask;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public class ArraySlava {
     private int size;
@@ -28,35 +27,41 @@ public class ArraySlava {
         size++;
     }
 
-    public void remove(Integer elements) {
-        Integer[] newArray = new Integer[this.elements.length - 1];
+    public void remove(int element) {
+        Integer[] newArray = new Integer[elements.length - 1];
         int counter = 0;
-        for (Integer element : this.elements) {
-            if (Objects.equals(element, elements)) {
+        for (Integer i : elements) {
+            if (i == null){
+                continue;
+            }
+            if (i == element) {
                 continue;
             } else {
-                newArray[counter] = element;
+                newArray[counter] = i;
                 counter++;
             }
-            this.elements = newArray;
+            elements = newArray;
         }
         size--;
 
     }
 
-    public void search(Integer elements) {
+    public boolean search(int element) {
         boolean flag = false;
-        for (Integer i : this.elements) {
-            if (Objects.equals(i, elements)) {
+        for (Integer i : elements) {
+            if (i == null){
+                continue;
+            }
+            if (i == element) {
                 flag = true;
                 break;
             }
         }
-        System.out.println(flag);
+        return flag;
     }
 
-    public void getElements(int i) {
-        System.out.println(elements[i]);
+    public int getElements(int i) {
+        return elements[i];
     }
 
     public void clean() {
@@ -65,7 +70,8 @@ public class ArraySlava {
     }
 
     private void grow() {
-        elements = Arrays.copyOf(elements, capacity * 2);
+        int newCapacity = capacity * 2;
+        elements = Arrays.copyOf(elements, newCapacity);
     }
 
     public void print() {
