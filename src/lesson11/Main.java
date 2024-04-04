@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        inputAndSum();
+//        inputAndSum();
         searchAndDel();
     }
 
@@ -38,25 +38,12 @@ public class Main {
         for (int i = 0; i < 7; i++) {
             list.add(scan.nextInt());
         }
-        List<Integer> listDel = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         for (Integer i : list) {
-            if (countOccurrences(i, list)) {
-                if (!listDel.contains(i))
-                    listDel.add(i);
-
+            if (list.indexOf(i) == list.lastIndexOf(i)) {
+                result.add(i);
             }
         }
-        list.removeAll(listDel);
-        System.out.println(list);
-    }
-
-    public static boolean countOccurrences(Integer number, List<Integer> list){
-        int counter = 0;
-        for (Integer i : list) {
-            if (Objects.equals(i, number)) {
-                counter++;
-            }
-        }
-        return counter > 1;
+        System.out.println(result);
     }
 }

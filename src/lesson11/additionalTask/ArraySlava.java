@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArraySlava {
     private int size;
-    private final int capacity;
+    private int capacity;
     private Integer[] elements;
 
     public ArraySlava() {
@@ -31,7 +31,7 @@ public class ArraySlava {
         Integer[] newArray = new Integer[elements.length - 1];
         int counter = 0;
         for (Integer i : elements) {
-            if (i == null){
+            if (i == null) {
                 continue;
             }
             if (i == element) {
@@ -49,7 +49,7 @@ public class ArraySlava {
     public boolean search(int element) {
         boolean flag = false;
         for (Integer i : elements) {
-            if (i == null){
+            if (i == null) {
                 continue;
             }
             if (i == element) {
@@ -70,8 +70,8 @@ public class ArraySlava {
     }
 
     private void grow() {
-        int newCapacity = capacity * 2;
-        elements = Arrays.copyOf(elements, newCapacity);
+        capacity *= 2;
+        elements = Arrays.copyOf(elements, capacity);
     }
 
     public void print() {
